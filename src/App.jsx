@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Facebook, MapPin, Phone, ShoppingCart, Utensils } from 'lucide-react'; // Import Phone icon
+import { Facebook, MapPin, Phone, ShoppingCart, Utensils } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import CartSummary from './components/CartSummary';
 import FoodCard from './components/FoodCard';
@@ -93,6 +93,11 @@ const App = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-gray-700 to-gray-900 p-4">
       <div className="w-full max-w-2xl bg-gray-800 rounded-3xl p-5 shadow-xl relative border border-gray-700">
+        {/* Development Tag */}
+        <div className="absolute top-0 right-0 bg-yellow-400 text-gray-900 py-1 px-3 rounded-tr-3xl rounded-bl-xl font-bold text-sm shadow-lg transform rotate-12 origin-top-right z-10">
+          Under Development
+        </div>
+
         {/* Navbar */}
         <div className="rounded-2xl bg-gray-700 shadow-md border border-gray-800 p-4 mb-4">
           <div className="flex justify-between items-center mb-2">
@@ -120,7 +125,7 @@ const App = () => {
               </div>
             </div>
           </div>
-          <div className="text-gray-300 text-sm mb-">
+          <div className="text-gray-300 text-sm mb-2">
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-blue-400" />
               <a
@@ -203,7 +208,5 @@ const App = () => {
     </div>
   );
 };
-
-<FoodCard></FoodCard>;
 
 export default App;
