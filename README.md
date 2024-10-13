@@ -27,10 +27,6 @@ A React-based food ordering app demo!
 
 ![Bite Me App Preview](https://i.imgur.com/4DASQgP.png)
 
-## 🤝 Contributing
-
-Got ideas? Great! Open an issue or submit a PR.
-
 ## ⚠️ Important Note
 
 This project is for fun and learning only. Do not use for commercial use!
