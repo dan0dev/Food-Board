@@ -29,7 +29,7 @@ A React-based food ordering app demo!
 
 ## ⚠️ Important Note
 
-This project is for fun and learning only. Do not use for commercial use!
+This project is for fun and learning only. Do not use for commercial use! - [Check license](https://github.com/DanCodernaut/Food-Board/?tab=License-1-ov-file)
 
 ---
 
