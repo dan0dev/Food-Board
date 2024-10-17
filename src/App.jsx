@@ -10,6 +10,7 @@ import {
   filter,
   foodRecords,
   PACKAGE_FEE_PER_ITEM,
+  DISCOUNT_CODES,
 } from './constants';
 
 const App = () => {
@@ -146,7 +147,7 @@ const App = () => {
 
         {/* Tabs for Food Categories */}
         <div className="flex gap-2 mb-3 mt-3 overflow-x-auto pb-2">
-          {['all', 'Italian', 'Japanese', 'American', 'Mexican'].map((tab) => (
+          {Object.keys(filter).map((tab) => (
             <motion.button
               key={tab}
               onClick={() => handleTabClick(tab)}
@@ -200,6 +201,7 @@ const App = () => {
           calculateSubtotal={calculateSubtotal}
           calculatePackageFee={calculatePackageFee}
           calculateTotal={calculateTotal}
+          discountCodes={DISCOUNT_CODES}
         />
 
         {/* Footer Links */}

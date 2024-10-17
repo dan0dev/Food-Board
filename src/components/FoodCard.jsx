@@ -16,25 +16,6 @@ const FoodCard = ({ food, addToCart, removeFromCart, quantity }) => {
     ));
   };
 
-  FoodCard.propTypes = {
-    food: PropTypes.shape({
-      description: PropTypes.string,
-      type: PropTypes.string.isRequired,
-      restaurant: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-      }).isRequired,
-      prepTime: PropTypes.string.isRequired,
-      rating: PropTypes.number.isRequired,
-      ratingCount: PropTypes.number.isRequired,
-      price: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      dish: PropTypes.string.isRequired,
-    }).isRequired,
-    addToCart: PropTypes.func.isRequired,
-    removeFromCart: PropTypes.func.isRequired,
-    quantity: PropTypes.number.isRequired,
-  };
-
   return (
     <motion.div
       className="flex flex-col gap-3 w-full p-4 rounded-2xl bg-gray-700 shadow-md border border-gray-600"
@@ -53,15 +34,12 @@ const FoodCard = ({ food, addToCart, removeFromCart, quantity }) => {
           <div className="flex justify-between items-start">
             <div className="flex-grow">
               <h3 className="font-bold text-gray-200 text-lg mb-1">{food.dish}</h3>
-              <p className="text-sm text-gray-400 mb-2">
-                {food.description ||
-                  `A delicious ${food.type} dish from ${food.restaurant.name}.
-                Prepared with care in ${food.prepTime}.`}
-              </p>
+              <p className="text-sm text-gray-400 mb-2">{food.description}</p>
               <div className="flex items-center gap-1 mb-2">
                 {starRating(food.rating)}
                 <span className="text-sm text-gray-400 ml-1">({food.ratingCount})</span>
               </div>
+              <p className="text-sm text-gray-400">{food.prepTime}</p>
             </div>
             <div className="text-right flex flex-col items-end">
               <div className="font-bold text-gray-200 mb-3">${food.price.toFixed(2)}</div>
@@ -91,6 +69,23 @@ const FoodCard = ({ food, addToCart, removeFromCart, quantity }) => {
       </div>
     </motion.div>
   );
+};
+
+FoodCard.propTypes = {
+  food: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    dish: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    prepTime: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    ratingCount: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  addToCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func.isRequired,
+  quantity: PropTypes.number.isRequired,
 };
 
 export default FoodCard;
