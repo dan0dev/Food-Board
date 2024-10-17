@@ -18,7 +18,7 @@ const FoodCard = ({ food, addToCart, removeFromCart, quantity }) => {
 
   FoodCard.propTypes = {
     food: PropTypes.shape({
-      description: PropTypes.string, // Add validation for description
+      description: PropTypes.string,
       type: PropTypes.string.isRequired,
       restaurant: PropTypes.shape({
         name: PropTypes.string.isRequired,
