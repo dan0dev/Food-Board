@@ -7,14 +7,14 @@ import Footer from './components/Footer';
 import {
   CART_STORAGE_KEY,
   DELIVERY_FEE,
+  DISCOUNT_CODES,
   filter,
   foodRecords,
   PACKAGE_FEE_PER_ITEM,
-  DISCOUNT_CODES,
 } from './constants';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeTab, setActiveTab] = useState('All');
   const [filteredFoods, setFilteredFoods] = useState([]);
   const [isChangingTabs, setIsChangingTabs] = useState(false);
   const [cart, setCart] = useState(() => {

@@ -93,7 +93,7 @@ export const foodRecords = [
 ];
 
 export const filter = {
-  ['all']: () => true,
+  ['All']: () => true,
   ['Pizzas']: (record) => record.type === 'Pizzas',
   ['Hamburgers']: (record) => record.type === 'Hamburgers',
   ['Desserts']: (record) => record.type === 'Desserts',
