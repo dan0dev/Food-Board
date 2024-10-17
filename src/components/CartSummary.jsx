@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MdDelete as Trash2, MdClose as X } from 'react-icons/md';
 import { DELIVERY_FEE, DISCOUNT_CODES, PACKAGE_FEE_PER_ITEM, foodRecords } from '../constants';
 
@@ -15,23 +15,23 @@ const CartSummary = ({
 }) => {
   const [discountCode, setDiscountCode] = useState('');
   const [discountApplied, setDiscountApplied] = useState(false);
-  const [discountAmount, setDiscountAmount] = useState(0); // State for discount amount
-  const [errorMessage, setErrorMessage] = useState(''); // State for error message
+  const [discountAmount, setDiscountAmount] = useState(0);
+  const [errorMessage, setErrorMessage] = useState(''); //
 
   const handleApplyDiscount = () => {
-    const discountValue = DISCOUNT_CODES[discountCode.toLowerCase()]; // Get the discount value
+    const discountValue = DISCOUNT_CODES[discountCode.toLowerCase()];
     if (discountValue) {
       setDiscountApplied(true);
-      setDiscountAmount(discountValue); // Set the discount amount
-      setErrorMessage(''); // Clear any existing error message
+      setDiscountAmount(discountValue);
+      setErrorMessage('');
     } else {
       setDiscountApplied(false);
-      setDiscountAmount(0); // Reset discount if invalid code
-      setErrorMessage('Discount code does not exist.'); // Set error message
+      setDiscountAmount(0);
+      setErrorMessage('Discount code does not exist.');
     }
   };
 
-  const totalAfterDiscount = calculateTotal() * (1 - discountAmount); // Apply the discount to the total
+  const totalAfterDiscount = calculateTotal() * (1 - discountAmount);
 
   return (
     <AnimatePresence>
@@ -106,8 +106,7 @@ const CartSummary = ({
               </div>
               <div className="flex justify-between font-bold text-blue-400 mb-2">
                 <span>Total:</span>
-                <span>${totalAfterDiscount.toFixed(2)}</span>{' '}
-                {/* Updated to show total after discount */}
+                <span>${totalAfterDiscount.toFixed(2)}</span> {/* Show total after discount */}
               </div>
               {/* Discount Code Section */}
               <div className="mt-4">
@@ -117,7 +116,7 @@ const CartSummary = ({
                     value={discountCode}
                     onChange={(e) => setDiscountCode(e.target.value)}
                     placeholder="Enter discount code"
-                    className="flex-grow px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition" // Added 'uppercase' class for input text
+                    className="flex-grow px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
                   />
                   <motion.button
                     className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
@@ -134,7 +133,7 @@ const CartSummary = ({
                 {errorMessage && <p className="mt-2 text-sm text-red-400">{errorMessage}</p>}
               </div>
             </div>
-            {/* Green Pay Button */}
+            {/* Pay Button */}
             <motion.button
               className="mt-4 w-full px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
               onClick={handlePayment}

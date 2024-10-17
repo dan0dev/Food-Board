@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Minus, Plus, Star } from 'lucide-react';
+import PropTypes from 'prop-types';
 
 const FoodCard = ({ food, addToCart, removeFromCart, quantity }) => {
   const starRating = (rating) => {
@@ -13,6 +14,25 @@ const FoodCard = ({ food, addToCart, removeFromCart, quantity }) => {
         }`}
       />
     ));
+  };
+
+  FoodCard.propTypes = {
+    food: PropTypes.shape({
+      description: PropTypes.string, // Add validation for description
+      type: PropTypes.string.isRequired,
+      restaurant: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+      }).isRequired,
+      prepTime: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      ratingCount: PropTypes.number.isRequired,
+      price: PropTypes.number.isRequired,
+      image: PropTypes.string.isRequired,
+      dish: PropTypes.string.isRequired,
+    }).isRequired,
+    addToCart: PropTypes.func.isRequired,
+    removeFromCart: PropTypes.func.isRequired,
+    quantity: PropTypes.number.isRequired,
   };
 
   return (

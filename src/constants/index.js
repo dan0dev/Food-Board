@@ -1,9 +1,6 @@
 export const foodRecords = [
   {
     id: 1,
-    restaurant: {
-      name: 'Pizza Palace',
-    },
     dish: 'Margherita Pizza',
     type: 'Italian',
     price: 12.99,
@@ -11,12 +8,11 @@ export const foodRecords = [
     rating: 5,
     ratingCount: 220,
     image: 'https://i.imgur.com/XjQnQeB.png',
+    description:
+      'Classic Neapolitan pizza with fresh mozzarella, tomatoes, and basil on a thin crust.',
   },
   {
     id: 2,
-    restaurant: {
-      name: 'Sushi Station',
-    },
     dish: 'California Roll',
     type: 'Japanese',
     price: 15.99,
@@ -24,12 +20,11 @@ export const foodRecords = [
     rating: 5,
     ratingCount: 180,
     image: 'https://i.imgur.com/XB6AABW.jpeg',
+    description:
+      'Inside-out sushi roll with crab, avocado, and cucumber, topped with sesame seeds.',
   },
   {
     id: 3,
-    restaurant: {
-      name: 'Burger Barn',
-    },
     dish: 'Classic Cheeseburger',
     type: 'American',
     price: 10.99,
@@ -37,12 +32,11 @@ export const foodRecords = [
     rating: 4.5,
     ratingCount: 250,
     image: 'https://i.imgur.com/kmaPuKL.jpeg',
+    description:
+      'Juicy beef patty topped with melted cheese, lettuce, tomato, and pickles on a toasted bun.',
   },
   {
     id: 4,
-    restaurant: {
-      name: 'Taco Town',
-    },
     dish: 'Chicken Tacos',
     type: 'Mexican',
     price: 9.99,
@@ -50,6 +44,8 @@ export const foodRecords = [
     rating: 3.2,
     ratingCount: 200,
     image: 'https://i.imgur.com/svHKqO4.jpeg',
+    description:
+      'Soft corn tortillas filled with seasoned grilled chicken, fresh salsa, and cilantro.',
   },
 ];
 
