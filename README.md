@@ -14,7 +14,7 @@ A React-based food ordering app demo!
 1. Clone this repo
 2. Run `npm install`
 3. Start the app with `npm run dev`
-4. Visit `http://localhost:5173/` and start drooling!
+4. Visit `localhost` and start drooling!
 
 ## 🛠️ Built With
 
