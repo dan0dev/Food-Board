@@ -62,7 +62,7 @@ export const DELIVERY_FEE = 2.99;
 export const PACKAGE_FEE_PER_ITEM = 0.5;
 
 export const DISCOUNT_CODES = {
-  save10: 0.1, // 10% discount
-  save50: 0.5, // 50% discount
-  save100: 1.0, // 100% discount (free)
+  save10: 0.1, // 10%
+  save50: 0.5, // 50%
+  save100: 1.0, // 100%
 };
